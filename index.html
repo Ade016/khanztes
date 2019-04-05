@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>Witaj świecie!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <style>
+            /* Ustawienia strony */
+            html, body {
+                margin: 0;
+                height: 100%;
+                background-size: cover !important;
+                background-position: center !important;
+            }
+            /* Ustawienia napisu */
+            h1 {
+                margin: 0;
+                top: 45%;
+                position: relative;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 50px;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: 1px;
+                animation: 5s powitanie forwards;
+            }
+            /* Ustawienia responsywności strony */
+            @media (max-width: 767px) {
+                h1 {
+                    font-size: 25px;
+                }
+            }
+            /* Animacja napisu */
+            @keyframes powitanie {
+                0% {
+                    top: 15%;
+                    opacity: 0;
+                }
+                100% {
+                    top: 45%;
+                    opacity: 1;
+                }
+            }
+        </style>
+        <script>
+            // Zmienne do wyświetlenia powitania.
+            var data = new Date();
+            var godzina = data.getHours();
+            var imie = 'Jakub';
+            var powitanie;
+            // Zmiana powitania zależnie od godziny.
+            if (godzina > 0 & godzina <= 18) {
+                powitanie = 'Dzień dobry, ' + imie + '!';
+            } else {
+                powitanie = 'Dobry wieczór, ' + imie + '!';
+            }
+            // Wyświetlenie powitania.
+            document.write('<h1>' + powitanie + '</h1>');
+            // Zmiana tła zależnie od godziny.
+            if (godzina > 0 & godzina <= 18) {
+                document.body.style.background = "url('images/day-sky.jpg')";
+            } else {
+                document.body.style.background = "url('images/night-sky.jpg')";
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
