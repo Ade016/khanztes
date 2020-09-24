@@ -60,21 +60,39 @@
             // Zmiana powitania zależnie od godziny.
             if (godzina > 0 & godzina < 10) {
                 powitanie = 'Good morning, ' + imie + '!';
-            } elseif (godzina >=10 & godzina <15) {
-                    powitanie = 'Good afternoon, ' + imie + '!';
-            } elseif (godzina <18) {
-                    powitanie = 'Good evening, ' + imie + '!';
-            }    
-                else {
-                powitanie = 'Good Night, ' + imie + '!';
+            } 
+            
+            else if (godzina >=10 & godzina <15) {
+                powitanie = 'Good afternoon, ' + imie + '!';
+            }
+
+            else if (godzina >=16 & godzina <18) {
+                powitanie= 'Good evening. ' + imie + '!' ;
+            }
+            
+
+            else {
+                powitanie = 'Good night, ' + imie + '!';
             }
             // Wyświetlenie powitania.
             document.write('<h1>' + powitanie + '</h1>');
             // Zmiana tła zależnie od godziny.
-            if (godzina > 0 & godzina <= 18) {
-                document.body.style.background = "url('images/day-sky.jpg')";
-            } else {
-                document.body.style.background = "url('images/night-sky.jpg')";
+            if (godzina > 0 & godzina < 10) {
+                document.body.style.background = "url('images/pagi.jpg')";
+            } 
+            
+            else if (godzina >=10 & godzina <15) {
+                document.body.style.background = "url('images/siang.jpg')";
+            }
+
+            else if (godzina >=16 & godzina <18) {
+                document.body.style.background = "url('images/sore.jpg')";
+            }
+
+            
+            
+            else {
+                document.body.style.background = "url('images/malam.jpg')";
             }
         </script>
     </head>
