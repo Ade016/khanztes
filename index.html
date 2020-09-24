@@ -51,31 +51,80 @@
                 }
             }
         </style>
+		
+		<style>
+            /* Ustawienia strony */
+            html, body {
+                margin: 0;
+                height: 100%;
+                background-size: cover !important;
+                background-position: center !important;
+            }
+            /* Ustawienia napisu */
+            h2 {
+                margin: 0;
+                top: 45%;
+                position: relative;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 20px;
+                font-family: 'Montserrat', sans-serif;
+                letter-spacing: 1px;
+                animation: 5s powitanie forwards;
+            }
+            /* Ustawienia responsywności strony */
+            @media (max-width: 767px) {
+                h2 {
+                    font-size: 25px;
+                }
+            }
+            /* Animacja napisu */
+            @keyframes powitanie {
+                0% {
+                    top: 15%;
+                    opacity: 0;
+                }
+                100% {
+                    top: 45%;
+                    opacity: 1;
+                }
+            }
+        </style>
+		
+		
         <script>
             // Zmienne do wyświetlenia powitania.
             var data = new Date();
             var godzina = data.getHours();
             var imie = 'Khanza';
             var powitanie;
+			var powitanie2;
             // Zmiana powitania zależnie od godziny.
             if (godzina > 0 & godzina < 10) {
                 powitanie = 'Good morning, ' + imie + '!';
+				powitanie2 = 'Lose an hour in the morning and you will spend all day looking for it ';
             } 
             
             else if (godzina >=10 & godzina <15) {
                 powitanie = 'Good afternoon, ' + imie + '!';
+				powitanie2 = 'The best preparation for tomorrow is doing your best today ☺';
             }
 
             else if (godzina >=16 & godzina <18) {
                 powitanie= 'Good evening. ' + imie + '!' ;
+				powitanie2 = 'Be proud of what you have done today ';
             }
             
 
             else {
                 powitanie = 'Good night, ' + imie + '!';
+				powitanie2 = 'Think of all the things you enjoyed today and be grateful';
             }
             // Wyświetlenie powitania.
-            document.write('<h1>' + powitanie + '</h1>');
+            
+			document.write('<h1>' + powitanie + '</h1>');
+			document.write('<h2>' + powitanie2 + '</h2>');
+			
             // Zmiana tła zależnie od godziny.
             if (godzina > 0 & godzina < 10) {
                 document.body.style.background = "url('images/pagi.jpg')";
